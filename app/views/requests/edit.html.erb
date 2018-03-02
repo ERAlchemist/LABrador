@@ -1,0 +1,14 @@
+<h1>Edit Request</h1>
+<%= form_for @request do |f| %>
+
+    <%= label_tag(:title, "Title:" ) %>
+    <%= f.text_field :title %></br>
+
+    <%= label_tag(:description, "Description") %>
+    <%= f.text_area :description %></br>
+
+    <%= date_field(:request, :due_date)  %></br>
+
+    <%= f.submit "Update" %>
+    
+<%end%>
