@@ -26,6 +26,11 @@ class RequestsController < ApplicationController
         redirect_to request_path(@request)
     end
 
+    def destroy
+        Request.find(params[:id]).destroy
+        redirect_to root_path
+    end
+
     private
         def request_params
             params.require(:request).permit(:title, :description, :due_date)
