@@ -1,0 +1,5 @@
+<%= link_to "New Request", new_request_path %>
+<h1>Requests</h1>
+<% @requests.each do |request| %>
+    <li><%= link_to request.title, request_path(request.id) %></li>
+<%end%>
