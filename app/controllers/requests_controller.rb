@@ -1,4 +1,5 @@
 class RequestsController < ApplicationController
+    before_action :set_request, only: [:show, :edit, :update, :destroy]
     def index
         @requests = Request.all
     end
@@ -32,6 +33,10 @@ class RequestsController < ApplicationController
     end
 
     private
+        def set_request
+            @request = Request.find(params[:id])
+        end
+
         def request_params
             params.require(:request).permit(:title, :description, :due_date)
         end

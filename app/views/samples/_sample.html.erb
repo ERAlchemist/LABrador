@@ -1,0 +1,32 @@
+<div class="row clearfix">
+	<% if sample.completed? %>
+		<div class="complete">
+			<%= link_to complete_request_sample_path(@request, sample.id), method: :patch do %>
+				<i style="opacity: 0.4;" class="fa fa-check"></i>
+	        <% end %>
+		</div>
+		<div class="sample">
+			<p style="opacity: 0.4;"><strike><%= sample.tank %></strike></p>
+		</div>
+		<div class="trash">
+			<%= link_to request_sample_path(@request, sample.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+				<i class="fa fa-trash"></i>
+            <% end %>
+		</div>
+	        <% else %>
+		<div class="complete">
+			<%= link_to complete_request_sample_path(@request, sample.id), method: :patch do %>
+				<i class="fa fa-check"></i>
+	        <% end %>
+		</div>
+		<div class="sample">
+			<p><%= sample.tank %>: <%= sample.lot_id %></p>
+            
+		</div>
+		<div class="trash">
+			<%= link_to request_sample_path(@request, sample.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+				<i class="fa fa-trash"></i>
+	        <% end %>
+		</div>
+	<% end %>
+</div>

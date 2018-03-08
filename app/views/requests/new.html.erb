@@ -1,12 +1,9 @@
-<h1>Create a New Request</h1>
-<%=form_for @request do |f| %>
-    <%= label_tag(:title, "Title:") %>
-    <%= f.text_field :title %></br>
+<h1 class="request_title">New Request</h1>
 
-    <%= label_tag(:description, "Description") %>
-    <%= f.text_area :description %></br>
+<div class="forms">
+	<%= render 'form' %>
+</div>
 
-    <%= label_tag(:due_date, "Due Date") %>
-    <%= date_field(:request, :due_date) %>
-    <%= f.submit "Create" %>
-<% end %>
+<div class="links">
+	<%= link_to 'Back', requests_path %>
+</div>

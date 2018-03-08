@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180302022924) do
+ActiveRecord::Schema.define(version: 20180302060404) do
 
   create_table "requests", force: :cascade do |t|
     t.string "title"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(version: 20180302022924) do
     t.date "due_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "samples", force: :cascade do |t|
+    t.integer "request_id"
+    t.string "tank"
+    t.string "lot_id"
+    t.datetime "time_completed"
+    t.boolean "complete"
+    t.boolean "is_empty"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["request_id"], name: "index_samples_on_request_id"
   end
 
 end
