@@ -32,6 +32,11 @@ class RequestsController < ApplicationController
         redirect_to root_path
     end
 
+    def import
+        Sample.import(params[:file])
+       # redirect_to @request, notice: "Samples imported"
+    end
+
     private
         def set_request
             @request = Request.find(params[:id])

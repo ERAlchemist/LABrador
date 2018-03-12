@@ -3,3 +3,8 @@
   <%= f.text_field :lot_id,  placeholder: "Lot ID" %>
   <%= f.submit "Add Sample" %>
 <% end %>
+
+<%= form_tag import_request_samples_path(@request), multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
