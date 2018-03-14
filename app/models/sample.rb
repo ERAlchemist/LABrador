@@ -5,6 +5,10 @@ class Sample < ApplicationRecord
         !time_completed.blank?
     end
 
+    def empty?
+        !is_empty.blank?
+    end
+
     def self.import(file, request)
         return if file.blank?
          spreadsheet = Roo::Spreadsheet.open(file.path)

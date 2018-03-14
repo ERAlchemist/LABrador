@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   root 'requests#index'
   resources :requests do
-    
     resources :samples do
       collection { post :import }
       member do
-        patch :complete
+        patch :complete , :set_as_empty
+
       end
       
+
     end
   end
 

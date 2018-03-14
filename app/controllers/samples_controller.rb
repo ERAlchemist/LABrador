@@ -28,6 +28,11 @@ class SamplesController < ApplicationController
       Sample.import(params[:file], @request)
       redirect_to @request, notice: "Samples imported"
     end
+
+    def set_as_empty
+      @sample.update_attribute(:is_empty, true)
+      redirect_to @request, notices: "Tank Empty"
+    end
   
     private
   
