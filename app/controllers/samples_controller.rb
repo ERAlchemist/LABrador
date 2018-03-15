@@ -4,7 +4,7 @@ class SamplesController < ApplicationController
   
     def create
       @sample = @request.samples.create(sample_params)
-      redirect_to @request
+      redirect_to "#{url_for(@request)}##{@sample.id}"
     end
   
     def destroy
@@ -13,12 +13,12 @@ class SamplesController < ApplicationController
       else
         flash[:error] = "Sample could not be deleted."
       end
-      redirect_to @request
+      redirect_to "#{url_for(@request)}##{@sample.id-1}"
     end
   
     def complete
       @sample.update_attribute(:time_completed, Time.now)
-      redirect_to @request, notice: "Sample completed"
+      redirect_to "#{url_for(@request)}##{@sample.id}", notice: "Sample Completed!"
     end
 
     def import
@@ -31,7 +31,7 @@ class SamplesController < ApplicationController
 
     def set_as_empty
       @sample.update_attribute(:is_empty, true)
-      redirect_to @request, notices: "Tank Empty"
+      redirect_to "#{url_for(@request)}##{@sample.id}", notice: "Tank Empty"
     end
   
     private
