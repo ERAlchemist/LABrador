@@ -9,34 +9,7 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
-  <script>
-    <script>
-// there's nothing we can do if the browser doesn't have 
-// localStorage
-if (window.localStorage) {
-    var ls = window.localStorage;
-    // timeout needed to fire after harlowe resets document   
-    // scrollTop position to 0 rather than before
-    window.setTimeout(function() {
-        // sets the scroll to the previous, saved value, or to 0 
-        // if no value is saved.
-        var val = Number(ls['zcwScrollPosition']);
-        $(document).scrollTop(val);
-    }, 50);
-    
-    // updates the saved value whenever the player scrolls.
-    $(document).scroll(function(e) {
-        ls['zcwScrollPosition'] = $(document).scrollTop();
-    });
-    
-    // remove the event when the player navigates to a different
-    // passage.
-    $('tw-link, tw-icon.undo, tw-icon.redo').click(function() {
-        $(document).off('scroll');
-    });
-}
-</script>
-  </script>
+
   <body>
     <div class="container">
       <%= yield %>
