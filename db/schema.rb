@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180302060404) do
+ActiveRecord::Schema.define(version: 20180320031151) do
 
   create_table "requests", force: :cascade do |t|
     t.string "title"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20180302060404) do
     t.boolean "is_empty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "sample_size"
     t.index ["request_id"], name: "index_samples_on_request_id"
   end
 

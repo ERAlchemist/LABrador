@@ -1,10 +1,12 @@
 <%= form_for([@request, @request.samples.build]) do |f| %>
   <%= f.text_field :tank,  placeholder: "New Tank" %>
   <%= f.text_field :lot_id,  placeholder: "Lot ID" %>
-  <%= f.submit "Add Sample" %>
-<% end %>
+  <%= f.select :sample_size, ['250mL', '375mL','750mL'] %>
+  <%= f.submit "Add Sample" %><br>
+<% end %><br>
 
 <%= form_tag import_request_samples_path(@request), multipart: true do %>
+  <img src="https://png.icons8.com/color/64/000000/xls.png">
   <%= file_field_tag :file %>
   <%= submit_tag "Import" %>
 <% end %>

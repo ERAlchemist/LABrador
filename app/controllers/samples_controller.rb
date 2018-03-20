@@ -21,6 +21,11 @@ class SamplesController < ApplicationController
       redirect_to "#{url_for(@request)}##{@sample.id}", notice: "Sample Completed!"
     end
 
+    def remove_complete
+      @sample.update_attribute(:time_completed, nil)
+      redirect_to "#{url_for(@request)}##{@sample.id}", notice: "Sample Not Complete"
+    end
+
     def import
       if params[:file].blank?
         flash[:error] = 'No file selected.'
@@ -31,7 +36,12 @@ class SamplesController < ApplicationController
 
     def set_as_empty
       @sample.update_attribute(:is_empty, true)
-      redirect_to "#{url_for(@request)}##{@sample.id}", notice: "Tank Empty"
+      redirect_to "#{url_for(@request)}##{@sample.id}", notice: "Tank Empty!"
+    end
+
+    def remove_empty
+      @sample.update_attribute(:is_empty, nil)
+      redirect_to "#{url_for(@request)}##{@sample.id}", notice: "Tank Not Empty!"
     end
   
     private
@@ -45,6 +55,6 @@ class SamplesController < ApplicationController
     end
   
     def sample_params
-      params[:sample].permit(:tank, :lot_id)
+      params[:sample].permit(:tank, :lot_id, :sample_size)
     end
 end

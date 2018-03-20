@@ -2,9 +2,10 @@
 	
 	<% if sample.empty? %>
 		<div class="complete">
-			<%= link_to complete_request_sample_path(@request, sample.id), method: :patch do %>
-				<i class="fa fa-check-square-o" aria-hidden="true"></i>
-			<% end %>
+			
+				<img src="https://png.icons8.com/windows/30/000000/hibernate.png">
+			<br><br>
+			<%=sample.sample_size%>
 		</div>
 		
 		<div class = "empty" id=<%=sample.id%>>
@@ -12,46 +13,52 @@
 		</div>
 		<div class="right-block">
 			<div class="set-empty">
-				<%= link_to set_as_empty_request_sample_path(@request, sample.id), method: :patch do %>
+				<%= link_to remove_empty_request_sample_path(@request, sample.id), method: :patch do %>
 					<i class="fa fa-minus-circle" aria-hidden="true"></i>
 				<% end %>
 			</div>
 			<div class="trash">
 				<%= link_to request_sample_path(@request, sample.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-					<i class="fa fa-trash"></i>
+					<img src="https://png.icons8.com/color/30/000000/trash.png">
 				<% end %>
 			</div>
 		</div>
 	<%end%>
 	<% if sample.completed? %>
 		<div class="complete">
-			<%= link_to complete_request_sample_path(@request, sample.id), method: :patch do %>
-				<i class="fa fa-check-square-o" aria-hidden="true"></i>
-	        	<% end %>
+			<%= link_to remove_complete_request_sample_path(@request, sample.id), method: :patch do %>
+				<img src="https://png.icons8.com/nolan/30/000000/eraser.png">
+	        	<% end %><br><br>
+			<%=sample.sample_size%>
 		</div>
 		<div class="completed" id=<%=sample.id%>>
 			<p style="opacity: 0.4;">
 				<strike><%= sample.tank %></strike>
-				<strike><%= sample.lot_id %></strike></p>
-			<p>Tank <%= sample.tank %> sample collected: <%= sample.time_completed%></p>
+				<strike><%= sample.lot_id %></strike>
+				<img src="https://png.icons8.com/nolan/30/000000/checkmark.png">
+			</p>
+				
+			<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHMSURBVGhD7djBK2VhHMbxy8gChYXQxEiJlL3EanajWcnaWIyFYikLyj+glBRZKWUpstXU2EhZMIvZKwuLaULNIOL7nJw63Xvf2733LN738nvqU973uPo9nXPuPVfG8g4yi2s8O5yhF0GnGY/IVyBpB0FnABr0PFrlZhg6fhStAk5c5Fe0ys0IKqJIHe6gYbe0kUg7/kLHNrURer5Dw2ZfXvFldYk2bYQe131SMfdHHCsSWqxIaLEiIUUfetvQwHo4TGYI2teH4jdUIchM4hYa9gHzSKYBJ9Bx+YmPCCoaOh5wH5+QLzoL47iCfvcC3QgiY9BQenyf0kYRacEP6HW/UQ+vacQfaKBpbZQQPWCeQq9d1obPzEGDHEar0tOPJ/yDzpK3HENFvkSr8nIA/Y2JaOUh1dB9IU3oRB86UItiMwMVWY9WHtIKDaBL4/7155jWOlt6N1PBQvkKvWY3WnmIBkwO76IztodRfEB24k98XWJeUmyRJH07XIXepj9jEAvQsYoqUogVSRsr4mBF0saKOFiRtLEiDlYkbayIgxVJGyviYEXSxoo4eCtSg//IN1Q51uAti8g3VKlu0AOv0f+lVrBRpiV0wfKGksm8AMpJOO37/krXAAAAAElFTkSuQmCC">
+			<%=sample.sample_size%> sample of Tank <%= sample.tank %> collected: <%= sample.time_completed%></p>
 		</div>
 		<div class="right-block">
 			<div class="set-empty">
-				<%= link_to set_as_empty_request_sample_path(@request, sample.id), method: :patch do %>
-					<i class="fa fa-minus-circle" aria-hidden="true"></i>
-				<% end %>
+				
+					<img src="https://png.icons8.com/nolan/30/000000/high-priority.png">
+				
 			</div>
 			<div class="trash">
 				<%= link_to request_sample_path(@request, sample.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-					<i class="fa fa-trash"></i>
+					<img src="https://png.icons8.com/color/30/000000/trash.png">
 						<% end %>
 			</div>
 		</div>
 	<% elsif !sample.empty? %>
 		<div class="complete">
 			<%= link_to complete_request_sample_path(@request, sample.id), method: :patch do %>
-				<i class="fa fa-check-square-o" aria-hidden="true"></i>
-	        	<% end %>
+				<img src="https://png.icons8.com/nolan/30/000000/checked-2.png">
+	        	<% end %><br><br>
+			<%=sample.sample_size%>
 		</div>
 		<div class="sample" id=<%=sample.id%>>
 			<p><%= sample.tank %></p>
@@ -60,12 +67,12 @@
 		<div class="right-block">
 			<div class="set-empty">
 				<%= link_to set_as_empty_request_sample_path(@request, sample.id),  method: :patch do %>
-					<i class="fa fa-minus-circle" aria-hidden="true"></i>
+					<img src="https://png.icons8.com/nolan/30/000000/high-priority.png">
 				<% end %>
 			</div>
 			<div class="trash">
 				<%= link_to request_sample_path(@request, sample.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-					<i class="fa fa-trash"></i>
+					<img src="https://png.icons8.com/color/30/000000/trash.png">
 					<% end %>
 			</div>
 		</div>

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :samples do
       collection { post :import }
       member do
-        patch :complete , :set_as_empty
+        patch :complete , :set_as_empty, :remove_complete, :remove_empty
 
       end
       
