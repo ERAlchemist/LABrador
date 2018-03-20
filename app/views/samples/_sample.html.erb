@@ -3,27 +3,30 @@
 	<% if sample.empty? %>
 		<div class="complete">
 			<%= link_to complete_request_sample_path(@request, sample.id), method: :patch do %>
-				<i style="opacity: 0.4;" class="fa fa-check"></i>
+				<i class="fa fa-check-square-o" aria-hidden="true"></i>
 			<% end %>
 		</div>
+		
 		<div class = "empty" id=<%=sample.id%>>
 			<p>TANK <%= sample.tank%> IS EMPTY</p>
 		</div>
-		<div class="complete">
-			<%= link_to set_as_empty_request_sample_path(@request, sample.id), method: :patch do %>
-				<i class="fa fa-minus-circle" aria-hidden="true"></i>
-			<% end %>
-		</div>
-		<div class="trash">
-			<%= link_to request_sample_path(@request, sample.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-				<i class="fa fa-trash"></i>
-			<% end %>
+		<div class="right-block">
+			<div class="set-empty">
+				<%= link_to set_as_empty_request_sample_path(@request, sample.id), method: :patch do %>
+					<i class="fa fa-minus-circle" aria-hidden="true"></i>
+				<% end %>
+			</div>
+			<div class="trash">
+				<%= link_to request_sample_path(@request, sample.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+					<i class="fa fa-trash"></i>
+				<% end %>
+			</div>
 		</div>
 	<%end%>
 	<% if sample.completed? %>
 		<div class="complete">
 			<%= link_to complete_request_sample_path(@request, sample.id), method: :patch do %>
-				<i style="opacity: 0.4;" class="fa fa-check"></i>
+				<i class="fa fa-check-square-o" aria-hidden="true"></i>
 	        	<% end %>
 		</div>
 		<div class="completed" id=<%=sample.id%>>
@@ -32,15 +35,17 @@
 				<strike><%= sample.lot_id %></strike></p>
 			<p>Tank <%= sample.tank %> sample collected: <%= sample.time_completed%></p>
 		</div>
-		<div class="complete">
-			<%= link_to set_as_empty_request_sample_path(@request, sample.id), method: :patch do %>
-				<i class="fa fa-minus-circle" aria-hidden="true"></i>
-			<% end %>
-		</div>
-		<div class="trash">
-			<%= link_to request_sample_path(@request, sample.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-				<i class="fa fa-trash"></i>
-            		<% end %>
+		<div class="right-block">
+			<div class="set-empty">
+				<%= link_to set_as_empty_request_sample_path(@request, sample.id), method: :patch do %>
+					<i class="fa fa-minus-circle" aria-hidden="true"></i>
+				<% end %>
+			</div>
+			<div class="trash">
+				<%= link_to request_sample_path(@request, sample.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+					<i class="fa fa-trash"></i>
+						<% end %>
+			</div>
 		</div>
 	<% elsif !sample.empty? %>
 		<div class="complete">
@@ -52,16 +57,17 @@
 			<p><%= sample.tank %></p>
 			<%= sample.lot_id %>  
 		</div>
-	
-		<div class="complete">
-			<%= link_to set_as_empty_request_sample_path(@request, sample.id),  method: :patch do %>
-				<i class="fa fa-minus-circle" aria-hidden="true"></i>
-			<% end %>
-		</div>
-		<div class="trash">
-			<%= link_to request_sample_path(@request, sample.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-				<i class="fa fa-trash"></i>
-	        	<% end %>
+		<div class="right-block">
+			<div class="set-empty">
+				<%= link_to set_as_empty_request_sample_path(@request, sample.id),  method: :patch do %>
+					<i class="fa fa-minus-circle" aria-hidden="true"></i>
+				<% end %>
+			</div>
+			<div class="trash">
+				<%= link_to request_sample_path(@request, sample.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+					<i class="fa fa-trash"></i>
+					<% end %>
+			</div>
 		</div>
 	<% end %>
 

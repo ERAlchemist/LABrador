@@ -9,13 +9,16 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
+ * <img class ="front" src ="https://cdn0.iconfinder.com/data/icons/wine-production/100/11-512.png">
+     <img class="back" src="https://d30y9cdsu7xlg0.cloudfront.net/png/57198-200.png">
   background-image: url(https://i.pinimg.com/originals/9e/51/6e/9e516e6cd9e142138dd354c2082fd1b7.jpg);
   <img class="back" src="https://i.pinimg.com/originals/9e/51/6e/9e516e6cd9e142138dd354c2082fd1b7.jpg">
  $dark: #133E5C;
  *= require_tree .
  *= require_self
  */
+
+ 
  $white_opaque: rgba(250, 250, 250, .3);
  $dark: black;
  $white: #EBDFEB;
@@ -97,11 +100,16 @@ $mainEnd: #02026B;
 	box-sizing: border-box;
 }
 html {
-  height: 100%;
+  //height: 100%;
+ // opacity: 1.0;
+ //
 }
 
-body {
- 	height: 100%;
+.main-bd {
+  opacity: 1.0;
+  background:linear-gradient(90deg,$mainStart,$mainEnd 80%);
+  height: 100%;
+  /*
   //background-color: url(https://i.pinimg.com/originals/9e/51/6e/9e516e6cd9e142138dd354c2082fd1b7.jpg);
   background:linear-gradient(90deg,#00a0ee,#386aff 80%);
   background: -webkit-linear-gradient(89deg, $mainStart 10%, $mainEnd 100%);
@@ -109,21 +117,28 @@ body {
   background:     -ms-linear-gradient(89deg, $mainStart 10%, $mainEnd 100%);
   background:      -o-linear-gradient(89deg, $mainStart 10%, $mainEnd 100%);
   background:         linear-gradient(89deg, $mainStart 10%, $mainEnd 100%);
-  background:linear-gradient(90deg,$mainStart,$mainEnd 80%);
+  */
   font-family: 'Lato', sans-serif;
+ 
 }
-.back {
-	height: 100%;
-	width: 100%;
-	opacity: 0.08;
-	position: fixed;
-}
-.front {
-	height: 50%;
-	width: 50%;
+/*.back {
+	top: 0;
+	left: 10;
+	right: 10;
+	height: 160%;
+	width: 90%;
 	opacity: 0.1;
 	position: fixed;
 }
+.front {
+	top: 10;
+	left: 100;
+	height: 40%;
+	width: 40%;
+	opacity: 0.1;
+	position: fixed;
+}
+*/
 .clearfix:before,
 .clearfix:after {
     content: " ";
@@ -141,8 +156,8 @@ body {
 	font-weight: 100;
 }
 
-.container {
-	width: 60%;
+.container1 {
+	width: 50%;
 	max-width: 750px;
 	background: $white_opaque;
 	margin: 3em auto 0 auto;
@@ -150,6 +165,9 @@ body {
 	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
 	box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
 	padding: 1em 0;
+	opacity: 1.0;
+	position: relative;
+
 }
 
 .request_title {
@@ -186,6 +204,7 @@ body {
 }
 
 #samples_wrapper {
+	padding-left: 1.0em;
 	.row {
 		width: 100%;
 		border-top: 2px solid rgba(250,250,250, .3);
@@ -202,6 +221,7 @@ body {
 		.sample {
 			width: 80%;
 			float: left;
+			border-left: 1px solid rgba(250,250,250, .3);
 			p {
 				margin: 0;
 				padding: 1em;
@@ -213,6 +233,7 @@ body {
 		.completed {
 			width: 80%;
 			float: left;
+			border-left: 1px solid rgba(250,250,250, .3);
 			p {
 				margin: 0;
 				padding: 1em;
@@ -221,10 +242,11 @@ body {
 				text-align: right;
 			}
 		}
+		
 		.empty {
 			width: 80%;
 			float: left;
-			
+			border-left: 1px solid rgba(250,250,250, .3);
 			p {
 				margin: 0;
 				padding: 1em;
@@ -234,12 +256,22 @@ body {
 			}
 
 		}
-		.trash {
+		.right-block{
+			display: inline-block;
+			position: relative;
 			width: 10%;
 			float: right;
 			text-align: center;
-			border-left: 1px solid rgba(250,250,250, .3);
-			padding: 1em 0;
+			.trash {
+				//text-align: center;
+				border-left: 1px solid rgba(250,250,250, .3);
+				padding: 1em 0;
+			}
+			.set-empty {
+				//text-align: center;
+				border-left: 1px solid rgba(250,250,250, .3);
+				padding: 1em 0;
+			}
 		}
 		i {
 			color: $dark;
