@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'roo'
 gem "iconv", "~> 1.0.3"
 gem 'csv'
+gem "simple_calendar", "~> 2.0"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

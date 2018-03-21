@@ -21,7 +21,7 @@
  
  $white_opaque: rgba(250, 250, 250, .3);
  $dark: black;
- $white: #EBDFEB;
+ $white: rgb(238, 14, 238);
  $empty: #A80022;
  $back: #AFDFE3;
 
@@ -154,6 +154,44 @@ html {
     top: 10px;
     left: 0px;
 }
+.nav {
+	display: inline-block;
+	position: absolute;
+		top: 7em;
+		left: 2em;
+	.schedule {
+		//position: absolute;
+		//top: 7em;
+		//left: 2em;
+	}
+}
+
+
+.sched-table {
+	border: 1px;
+	
+	.sched-view {
+		font-size: 20px;
+		height: 10em;
+		td{
+			border-left: 2px solid rgba(250,250,250, .3);
+			opacity: 0.8em;
+			min-width: 150px;
+		}
+		a {
+			font-weight: bold;
+			color: #011B2E;
+			&:hover {
+				color: rgb(2, 129, 192);
+				
+				
+			}
+		}
+	}
+
+
+}
+	
 
 }
 
@@ -180,6 +218,7 @@ html {
 	  padding-top: 50px;
 	  padding-bottom: 0px;
   }
+
 
 
  
@@ -220,10 +259,10 @@ html {
 }
 
 .container1 {
-	width: 50%;
-	max-width: 750px;
+	width: 80%;
+	max-width: 1100px;
 	background: $white_opaque;
-	margin: 3em auto 0 auto;
+	margin: 10em auto 0 auto;
 	border-radius: 7px;
 	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
 	box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
@@ -236,7 +275,7 @@ html {
 .request_title {
 	text-align: center;
 	font-weight: 700;
-	font-size: 2.5rem;
+	font-size: 2.9rem;
 	text-transform: uppercase;
 	color: $dark;
 	margin: 0;
@@ -253,7 +292,7 @@ html {
 .request_sub_title {
 	margin: 0 0 3em 0;
 	text-align: center;
-	font-size: 0.9em;
+	font-size: 1.2em;
 	color: $dark;
 	font-weight: 100;
 }
@@ -285,6 +324,8 @@ html {
 			width: 80%;
 			float: left;
 			border-left: 1px solid rgba(250,250,250, .3);
+			font-weight: bold;
+			font-size: 2.0em;
 			p {
 				margin: 0;
 				padding: 1em;
@@ -303,6 +344,7 @@ html {
 				color: rgb(44, 0, 58);
 				font-weight: bold;
 				text-align: right;
+				font-size: 1.6em;
 			}
 		}
 		
@@ -316,6 +358,7 @@ html {
 				color: $empty;
 				font-weight: bold;
 				text-align: right;
+				font-size: 1.6em;
 			}
 
 		}
@@ -328,12 +371,20 @@ html {
 			.trash {
 				//text-align: center;
 				border-left: 1px solid rgba(250,250,250, .3);
-				padding: 1em 0;
+				padding: 1.5em 0;
+
+				img {
+					margin-top: 1em;
+				}
 			}
 			.set-empty {
 				//text-align: center;
 				border-left: 1px solid rgba(250,250,250, .3);
 				padding: 1em 0;
+
+				img {
+					margin-top: 0px;
+				}
 			}
 		}
 		i {
@@ -341,6 +392,17 @@ html {
 			transition: all .4s ease-in-out;
 			&:hover {
 				color: $white;
+				
+			}
+		}
+		a {
+			color: $dark;
+			//transition: all .4s ease-in-out;
+			//margin-top: 10px;
+			&:hover {
+				background-color: white;
+				
+				//border: 1px solid rgba(250,250,250, .3);
 				
 			}
 		}
@@ -433,3 +495,12 @@ div.image {
 			max-height:5px;
 			background-image: url(/app/assets/images/empty.xcf)
 }
+.calendar-head {
+	display: block;
+	margin: 0 auto 0 auto;
+	text-align: center;
+	font-size: 1.9em;
+	font-weight: bold;
+	color: $dark;
+}
+

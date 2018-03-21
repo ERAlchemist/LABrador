@@ -14,5 +14,6 @@
 <div class="links">
 	<%= link_to 'Edit', edit_request_path(@request) %> |
 	<%= link_to 'Delete', request_path(@request), method: :delete, data: { confirm: "Are you sure?" }%> |
-    <%= link_to 'Back', requests_path %>
+    <%= link_to 'Back', requests_path %> |
+	<a href="/schedule">Schedule</a>
 </div>

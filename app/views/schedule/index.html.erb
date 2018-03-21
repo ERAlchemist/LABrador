@@ -1,0 +1,12 @@
+<%= week_calendar(events: @requests, attribute: :due_date, number_of_weeks: 1 )  do |date, requests| %>
+  <%= date.day %>
+  <% requests.each do |request|%>
+    <div>
+        <%= link_to request.title, request %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="links"> |
+    <%= link_to 'Back', requests_path %>
+</div>

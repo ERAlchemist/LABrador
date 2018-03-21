@@ -18,12 +18,14 @@
   <img class ="front" src ="https://cdn0.iconfinder.com/data/icons/wine-production/100/11-512.png">
      <img class="back" src="https://d30y9cdsu7xlg0.cloudfront.net/png/57198-200.png">
      <%=image_tag("small_logo.png", :class => "left-logo") %>
+     <div class="nav">
+     <a href="/schedule"><img class="schedule" src="https://png.icons8.com/ios/100/000000/tear-off-calendar-filled.png">Sampling Schedule</a><br><br>
+     <%= link_to requests_path do %>
+      <img src="https://png.icons8.com/ios/100/000000/view-details-filled.png">Requests
+     <%end%>
+     </div>
      <body class="main-bd">
-     
-    
-   
       <div class="container1">
-
       <%= yield %>
     </div>
   </body>

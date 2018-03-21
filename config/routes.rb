@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'requests#index'
+  resources :schedule 
   resources :requests do
     resources :samples do
       collection { post :import }
