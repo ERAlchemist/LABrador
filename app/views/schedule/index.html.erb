@@ -2,7 +2,11 @@
   <%= date.day %>
   <% requests.each do |request|%>
     <div>
-        <%= link_to request.title, request %>
+        <%if !request.completed?%>
+          <%= link_to request.title, request %>
+        <%else%>
+          <strike style="opacity: 0.4;"><%= link_to request.title, request %></strike>
+        <%end%>
     </div>
   <% end %>
 <% end %>
