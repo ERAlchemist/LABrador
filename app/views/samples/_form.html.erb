@@ -5,7 +5,7 @@
   <%= f.submit "Add Sample" %><br>
 <% end %><br>
 
-<%= form_tag import_request_samples_path(@request), multipart: true do %>
+<%= form_tag import_request_samples_path(@request), multipart: true do |f| %>
   <img src="https://png.icons8.com/color/64/000000/xls.png">
   <%= file_field_tag :file %>
   <%= submit_tag "Import" %>

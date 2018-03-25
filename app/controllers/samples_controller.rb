@@ -17,7 +17,7 @@ class SamplesController < ApplicationController
     end
   
     def complete
-      @sample.update_attribute(:time_completed, Time.now)
+      @sample.update_attribute(:time_completed, Time.now.in_time_zone)
       redirect_to "#{url_for(@request)}##{@sample.id}", notice: "Sample Completed!"
     end
 

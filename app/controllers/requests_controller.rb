@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-    before_action :set_request, only: [:show, :edit, :update, :destroy]
+    before_action :set_request, only: [:show, :edit, :update, :destroy, :close_out, :reopen]
     def index
         @requests = Request.all
     end
@@ -37,6 +37,18 @@ class RequestsController < ApplicationController
        # redirect_to @request, notice: "Samples imported"
     end
 
+    def close_out
+        @request.update_attribute(:time_completed,  Time.now.in_time_zone)
+        redirect_to @request, notice: "Request Completed!"
+    end
+
+    def reopen
+        @request.update_attribute(:time_completed, nil)
+        redirect_to @request, notice: "Request Re-opened!"
+    end
+        
+        
+  
     private
         def set_request
             @request = Request.find(params[:id])
