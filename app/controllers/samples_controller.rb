@@ -15,6 +15,15 @@ class SamplesController < ApplicationController
       end
       redirect_to "#{url_for(@request)}##{@sample.id-1}"
     end
+
+    def edit
+      @sample
+    end
+
+    def update
+        @sample.update sample_params
+        redirect_to "#{url_for(@request)}##{@sample.id}", notice: "Sample Updated!"
+    end
   
     def complete
       @sample.update_attribute(:time_completed, Time.now.in_time_zone)

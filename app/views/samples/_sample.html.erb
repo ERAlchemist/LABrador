@@ -6,6 +6,7 @@
 				<img src="https://png.icons8.com/windows/30/000000/hibernate.png">
 			<br><br>
 			<%=sample.sample_size%>
+			
 		</div>
 		
 		<div class = "empty" id=<%=sample.id%>>
@@ -19,7 +20,7 @@
 			</div>
 			<div class="trash">
 				<%= link_to request_sample_path(@request, sample.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-					<img src="https://png.icons8.com/color/30/000000/trash.png">
+					<%=image_tag("trash.svg")%>
 				<% end %>
 			</div>
 		</div>
@@ -27,7 +28,7 @@
 	<% if sample.completed? %>
 		<div class="complete">
 			<%= link_to remove_complete_request_sample_path(@request, sample.id), method: :patch do %>
-				<img src="https://png.icons8.com/nolan/30/000000/eraser.png">
+				<%=image_tag("Undo.svg")%>
 	        	<% end %><br><br>
 			<%=sample.sample_size%>
 		</div>
@@ -55,7 +56,8 @@
 	<% elsif !sample.empty? %>
 		<div class="complete">
 			<%= link_to complete_request_sample_path(@request, sample.id), method: :patch do %>
-				<img src="https://png.icons8.com/nolan/30/000000/checked-2.png">
+				
+				<%=image_tag("check_4.svg")%>
 	        	<% end %><br><br>
 			<%=sample.sample_size%>
 		</div>
@@ -66,7 +68,7 @@
 		<div class="right-block">
 			<div class="set-empty">
 				<%= link_to set_as_empty_request_sample_path(@request, sample.id),  method: :patch do %>
-					<img src="https://png.icons8.com/nolan/30/000000/high-priority.png">
+					<%= image_tag("empty.png")%>
 				<% end %>
 			</div>
 			<div class="trash">
@@ -76,6 +78,4 @@
 			</div>
 		</div>
 	<% end %>
-
-	
 </div>
