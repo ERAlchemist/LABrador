@@ -33,6 +33,7 @@ gem 'roo'
 gem "iconv", "~> 1.0.3"
 gem 'csv'
 gem "simple_calendar", "~> 2.0"
+gem "react_on_rails"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
