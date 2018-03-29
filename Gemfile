@@ -34,6 +34,8 @@ gem "iconv", "~> 1.0.3"
 gem 'csv'
 gem "simple_calendar", "~> 2.0"
 gem "react_on_rails"
+gem "webpacker", "3.0.2"
+gem 'jquery-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -56,3 +58,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'mini_racer', platforms: :ruby
