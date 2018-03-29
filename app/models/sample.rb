@@ -9,9 +9,11 @@ class Sample < ApplicationRecord
         !is_empty.blank?
     end
 
-    def self.import(file, request)
+    def self.import(file, request, size="250mL")
         return if file.blank?
          spreadsheet = Roo::Spreadsheet.open(file.path)
+         sizer = spreadsheet.cell(2,3)
+         size = sizer if !sizer.blank?
         # spreadsheet.set_value(1,3, 'request_id', nil)
         # header = spreadsheet.row(1)
         # header.push('request_id')
@@ -20,8 +22,13 @@ class Sample < ApplicationRecord
            spreadsheet.set_value(i, 3, request.id, nil)
            row = Hash[[header, spreadsheet.row(i)].transpose]
            puts row
+           puts "hello joe!"
+           
            sample = Sample.new
+           puts sample.sample_size 
+           puts "hi"
            sample.attributes = row
+           sample.sample_size = size if  sample.sample_size.blank?
            sample.save!
          end
        end 

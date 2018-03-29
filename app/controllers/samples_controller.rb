@@ -39,7 +39,7 @@ class SamplesController < ApplicationController
       if params[:file].blank?
         flash[:error] = 'No file selected.'
       end
-      Sample.import(params[:file], @request)
+      Sample.import(params[:file], @request, params[:sample_size])
       redirect_to @request, notice: "Samples imported"
     end
 
