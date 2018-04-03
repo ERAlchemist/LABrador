@@ -1,0 +1,26 @@
+<%# app/views/students/index.js.erb %>
+<% js = escape_javascript(
+  render(partial: 'requests/list', locals: { requests: @requests })
+) %>
+$("#filterrific_results").html("<%= js %>");
+
+$(function(){
+    $('#show-complete').change(function() {
+        alert(this.checked); 
+        if(this.checked){
+            alert('checked!!!')
+        } else {
+            alert('ot!')
+        }
+    });
+})();
+$(function(){
+    $('#show-incomplete').change(function() {
+        alert(this.checked); 
+        if(this.checked){
+            alert('checked!!!')
+        } else {
+            alert('ot!')
+        }
+    });
+})();

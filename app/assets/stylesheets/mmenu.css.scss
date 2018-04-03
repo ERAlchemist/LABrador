@@ -81,7 +81,7 @@ html.mmenu-opened .mmenu-page
 }
 html.mmenu-opened #mmenu-blocker
 {
-	background: rgba( 255, 255, 255, 0.1 );
+	background: rgba(223, 187, 187, 0.1);
 	display: block;
 	width: 100%;
 	height: 100%;
@@ -133,7 +133,7 @@ html.mmenu-right.mmenu-opening #mmenu-blocker
 }
 .mmenu *
 {
-	text-shadow: 0 1px 2px rgba( 0, 0, 0, 0.5 );
+	text-shadow: 0 1px 2px rgba(15, 15, 15, 0.5);
 	position: relative;
 }
 .mmenu li
@@ -218,7 +218,7 @@ html.mmenu-right .mmenu a.mmenu-subopen
 */
 .mmenu a.mmenu-subclose
 {
-	background: #222;
+	background: rgb(36, 34, 34);
 	text-indent: 40px;
 	padding-top: 10px;
 	margin-top: -10px;

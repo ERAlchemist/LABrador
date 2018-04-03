@@ -2,6 +2,9 @@ class RequestsController < ApplicationController
     before_action :set_request, only: [:show, :edit, :update, :destroy, :close_out, :reopen]
     def index
         @requests = Request.all
+        @complete_requests = Request.where(complete: true)
+        @incomplete_requests = Request.where(time_completed: nil)
+
     end
 
     def show
@@ -14,6 +17,7 @@ class RequestsController < ApplicationController
 
     def create
         @request = Request.create request_params
+        @request.complete = false
         redirect_to request_path(@request)
     end
 
@@ -39,11 +43,13 @@ class RequestsController < ApplicationController
 
     def close_out
         @request.update_attribute(:time_completed,  Time.now.in_time_zone)
+        @request.update_attribute(:complete,  true)
         redirect_to @request, notice: "Request Completed!"
     end
 
     def reopen
         @request.update_attribute(:time_completed, nil)
+        @request.update_attribute(:complete, false)
         redirect_to @request, notice: "Request Re-opened!"
     end
         

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'hello_world', to: 'hello_world#index'
   root 'requests#index'
   resources :schedule 
+  resources :samples
   resources :requests do
     member do
       patch :close_out, :reopen

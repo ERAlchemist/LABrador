@@ -1,7 +1,14 @@
 class SamplesController < ApplicationController
-    before_action :set_request
-    before_action :set_sample, except: [:create, :import]
-  
+    before_action :set_request, except: [:index]
+    before_action :set_sample, except: [:create, :import, :index]
+
+
+    def index
+      @samples = Sample.all
+      @complete_samples = @samples.select{|h| h.time_completed}
+      @incomplete_samples = @samples.select{|h| !h.time_completed}
+    end
+
     def create
       @sample = @request.samples.create(sample_params)
       redirect_to "#{url_for(@request)}##{@sample.id}"
@@ -17,7 +24,7 @@ class SamplesController < ApplicationController
     end
 
     def edit
-      @sample
+        @sample
     end
 
     def update

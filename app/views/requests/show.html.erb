@@ -7,17 +7,20 @@
 	 <%= link_to edit_request_path(@request) do  %>
 	 <%=image_tag('edit.svg')%>
 	<%end%>
- <br><br>
 
+<div class="closed-link">
 <%= link_to close_out_request_path(@request), method: :patch do %>
 	<%=image_tag("complete-64.png") %><br>Close Out
-	<% end %><br><br>
-
-<%else%><br><br>
+	<% end %>
+</div>
+<%else%>
+<div class="closed-link">
 	<%= link_to reopen_request_path(@request), method: :patch do %>
 		<%=image_tag("doc_edit_64.png") %><br>Re-Open
 	<% end %></p>
+</div>
 <%end%></p>
+
 
 
 <div id="samples_wrapper">
@@ -27,11 +30,16 @@
 	
 	<%else%>
 	<p class="time-completed"><%= @request.samples.count %> samples</p>
-		<%= render @request.samples %>
+		<% samples = @request.samples.sort_by{|h| h.tank.to_i} %>
+		
+		<%= render samples  %>
+		
+	
+	<%end%>
+		
 	<div id="form">
 		<%= render "samples/form" %>
 	</div>
-	<%end%>
 </div>
 
 <div class="links">

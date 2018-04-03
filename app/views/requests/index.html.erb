@@ -1,20 +1,20 @@
 
-<% @requests.each do |request| %>
-  <div class="index_row clearfix">
-    <%if request.completed?%>
-      <h2 class="request_title"><strike><%= link_to request.title, request %></strike></h2>
-    <p class="request_sub_title"><strike><%= request.description %></strike><br>
-                  Due: <%= request.due_date.strftime("%A, %B %d")%><br>
-           Completed: <%= request.time_completed.strftime("%A, %B %d")%></p>
-    <%else%>
-    <h2 class="request_title"><%= link_to request.title, request %></h2>
-    <p class="request_sub_title"><%= request.description %><br>
-            <%= request.due_date.strftime("%A, %B %d")%></p>
- 
-  <%end%>
-   </div>
-<% end %>
+<div class="filter-bar">
+
+  <p><label>Show Completed</label><input type="checkbox" name="show-complete" id="show-complete" value="show-complete" checked="yes">  ||
+  <label>Show Incomplete</label><input type="checkbox" name="show-incomplete" id="show-incomplete" value="show-incomplete" checked="yes"></p>
+</div>
+
+<div id="incomplete-list" class="hidden">
+<div class="request-label">Incomplete Requests</div>
+  <%= render(partial: 'requests/incomplete') %>
+</div>
+<div id="complete-list" class="hidden">
+<div class="request-label">Completed Requests</div>
+  <%= render(partial: 'requests/complete') %>
+</div>
 
 <div class="links">
   <img src="https://png.icons8.com/wired/64/000000/add-list.png"><%= link_to "New Request", new_request_path %>
+  
 </div>
