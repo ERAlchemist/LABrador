@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'requests#index'
   resources :schedule 
-  resources :samples
+  resources :recurrences
   resources :requests do
     member do
       patch :close_out, :reopen

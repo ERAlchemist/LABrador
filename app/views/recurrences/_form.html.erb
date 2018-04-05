@@ -1,0 +1,44 @@
+<%= form_for(@recurrence) do |f| %>
+  <% if @recurrence.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recurrence.errors.count, "error") %> prohibited this recurrence from being saved:</h2>
+
+      <ul>
+      <% recurrence.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_time %>
+    <%= f.datetime_select :start_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :recurring %>
+    <%= f.select_recurring :recurring, [
+  IceCube::Rule.weekly.day(:monday, :wednesday, :friday),
+  IceCube::Rule.weekly.day(:tuesday, :thursday),
+  IceCube::Rule.weekly.day(:monday),
+  IceCube::Rule.weekly.day(:tuesday),
+  IceCube::Rule.weekly.day(:wednesday),
+  IceCube::Rule.weekly.day(:thursday),
+  IceCube::Rule.weekly.day(:friday),
+  IceCube::Rule.daily,
+  IceCube::Rule.monthly.day_of_month(-1)
+] %>
+  </div><br>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

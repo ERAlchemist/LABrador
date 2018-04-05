@@ -4,18 +4,16 @@
  *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
  * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *<img src="https://png.icons8.com/nolan/30/000000/checked-2.png">
+
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- * <img class ="front" src ="https://cdn0.iconfinder.com/data/icons/wine-production/100/11-512.png">
-     <img class="back" src="https://d30y9cdsu7xlg0.cloudfront.net/png/57198-200.png">
-  background-image: url(https://i.pinimg.com/originals/9e/51/6e/9e516e6cd9e142138dd354c2082fd1b7.jpg);
-  <img class="back" src="https://i.pinimg.com/originals/9e/51/6e/9e516e6cd9e142138dd354c2082fd1b7.jpg">
- $dark: #133E5C;
+ *
+
  *= require_tree .
  *= require_self
+ *= require recurring_select
  */
 
  
@@ -254,6 +252,9 @@ html {
 	margin: 1.5em auto 0 auto;
 	border-bottom: 1px solid rgba(250,250,250, .3);
 	text-align: right;
+}
+.time-completed {
+	color: $white;
 }
 #samples_wrapper {
 	color: white;
