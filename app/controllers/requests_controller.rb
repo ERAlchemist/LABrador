@@ -44,6 +44,11 @@ class RequestsController < ApplicationController
     def close_out
         @request.update_attribute(:time_completed,  Time.now.in_time_zone)
         @request.update_attribute(:complete,  true)
+        if @request.is_recurring
+            new_request = @request.amoeba_dup
+            new_request.due_date = @request.due_date + @request.recurrence_interval.days
+            new_request.save!
+        end
         redirect_to @request, notice: "Request Completed!"
     end
 
@@ -61,7 +66,7 @@ class RequestsController < ApplicationController
         end
 
         def request_params
-            params.require(:request).permit(:title, :description, :due_date)
+            params.require(:request).permit(:title, :description, :due_date, :is_recurring, :recurrence_interval)
         end
 
 end

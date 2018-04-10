@@ -1,6 +1,11 @@
 class Sample < ApplicationRecord
     belongs_to :request, optional: true
 
+    amoeba do
+        enable
+        nullify [:is_empty, :time_completed, :complete]
+      end
+
     def completed?
         !time_completed.blank?
     end

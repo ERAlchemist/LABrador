@@ -38,6 +38,7 @@ gem "webpacker", "3.0.2"
 gem 'jquery-rails'
 gem 'recurring_select',  git: 'https://github.com/sahild/recurring_select.git', branch: 'master'
 gem 'ice_cube'
+gem 'amoeba'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

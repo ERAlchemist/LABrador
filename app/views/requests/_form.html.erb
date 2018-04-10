@@ -21,12 +21,20 @@
     <%= f.text_area :description %>
   </div>
 
-  <div class="field">
-    <%= f.label :due_date %>:<br><br>
+   <div class="field">
+    <%= f.label :due_date %>:
     <%= f.date_select :due_date %>
-  </div><br>
+  </div>
 
-  <div class="actions">
+    <div class="field">
+    <%= f.label :is_recurring %>:
+    <%= f.select :is_recurring, [true,false]%>
+  </div><br>
+    <div class="field">
+    <%= f.label :recurrence_interval %>:
+    <%= f.select :recurrence_interval, [1,2,3,4,5,6,7] %>
+  </div><br>
+  <div class="actions" id="new-request">
     <%= f.submit %>
   </div>
 <% end %>

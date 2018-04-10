@@ -1,12 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <h2 class="request_title"><%= @request.title %></h2>
-<p class="request_sub_title"><%= @request.description %><br><br>
- Due Date: <%= @request.due_date.strftime("%A, %B %d") %>
+<p class="sub"><%= @request.description %><br><br>
+ Due Date: <%= @request.due_date.strftime("%A, %B %d") %><br>
+ <%if @request.is_recurring%>
+ Recurring: <%=@request.is_recurring %><br>
+ Interval: <%=@request.recurrence_interval%> days
+<%end%>
+
  	<% if !@request.time_completed %>
-	 <%= link_to edit_request_path(@request) do  %>
-	 <%=image_tag('edit.svg')%>
+	 <span uk-icon="file-edit" uk-tooltip="title: Edit Request Details" ><%= link_to edit_request_path(@request) do  %>
+	 </span>
 	<%end%>
+	<a uk-icon="file-edit" href="www.google.com">
 
 <div class="closed-link">
 <%= link_to close_out_request_path(@request), method: :patch do %>
@@ -14,7 +20,7 @@
 	<% end %>
 </div>
 <%else%>
-<div class="closed-link">
+<div class="closed-link" uk-tooltip="title: Re-Open Request">
 	<%= link_to reopen_request_path(@request), method: :patch do %>
 		<%=image_tag("doc_edit_64.png") %><br>Re-Open
 	<% end %></p>
@@ -24,12 +30,13 @@
 
 
 <div id="samples_wrapper">
+
 	<%if @request.time_completed%>
 	
 		<%= render "samples/close"%>
 	
 	<%else%>
-	<p class="time-completed"><%= @request.samples.count %> samples</p>
+	<p class="uk-text-primary"><%= @request.samples.count %> samples</p>
 		<% samples = @request.samples.sort_by{|h| h.tank.to_i} %>
 		
 		<%= render samples  %>

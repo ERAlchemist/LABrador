@@ -18,14 +18,17 @@
 
  
  $white_opaque: rgba(250, 250, 250, .3);
- $dark: black;
- $white: rgb(252, 252, 252);
- $empty: #A80022;
+ $dark: white;
+ $white: rgb(24, 23, 23);
+ $empty:  #A80022;
  $back: #AFDFE3;
+ $primary: #1e87f0;
+ $secondary: #222;
 
 $mainStart: #94CEF7;
 $mainEnd: #011B2E;
-
+$blue-grey: linear-gradient(90deg,$mainStart,$mainEnd 80%);
+$prim-grey: linear-gradient(90deg,$mainStart,$primary 80%);
 * {
 	box-sizing: border-box;
 }
@@ -82,7 +85,7 @@ html {
 		font-size: 24px;
 		height: 15em;
 		td{
-			border-left: 2px solid rgba(250,250,250, .3);
+			border-left: 2px solid rgba(0,0,250, .3);
 			opacity: 0.8em;
 			min-width: 20%;
 		}
@@ -105,7 +108,7 @@ html {
 
 .main-bd {
   opacity: 1.0;
-  background:linear-gradient(90deg,$mainStart,$mainEnd 80%);
+  background: $prim-grey;
   height: 100%;
   /*
   //background-color: url(https://i.pinimg.com/originals/9e/51/6e/9e516e6cd9e142138dd354c2082fd1b7.jpg);
@@ -174,7 +177,7 @@ html {
 	width: 80%;
 	
 	max-width: 1100px;
-	background: linear-gradient(90deg,#388eb9,#2243a7 80%);
+	background: $secondary;
 	margin: 10em auto 0 auto;
 	border-radius: 7px;
 	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
@@ -185,7 +188,7 @@ html {
 	font-style: inherit;
 	color: #AFDFE3
 	a {
-		color: white;
+		color: $white;
 	}
 
 }
@@ -196,13 +199,13 @@ html {
 	font-size: 2.9rem;
 	font-style: inherit;
 	text-transform: uppercase;
-	color: white;
+	color: $dark;
 	margin: 0;
 	
 	a {
 		text-decoration: none;
 		font-style: inherit;
-		color: white;
+		color: $white;
 		transition: all .4s ease-in-out;
 		&:hover {
 			opacity: 0.4;
@@ -214,23 +217,30 @@ html {
 	margin: 0 0 3em 0;
 	text-align: center;
 	font-size: 1.2em;
-	color: white;
+	color: $white;
 	font-weight: 100;
 
+}
+.sub {
+	margin: 0 0 3em 0;
+	text-align: center;
+	font-size: 1.2em;
+	color: $dark;
+	font-weight: 100;
 }
 .closed-link {
 	text-align: center;
 	a {
-		color: white;
+		color: $dark;
 	}
 }
 .completed-request {
 
-	//background: linear-gradient(45deg,#9ad5f3,#697db9 80%);
+	
 }
 .incomplete-request {
 	opacity: 1.0;
-	//background: linear-gradient(45deg,#407792,#576db1 80%);
+	
 }
 .request-label {
 	color: white;
@@ -239,9 +249,9 @@ html {
 }
 .index_row {
 	padding: 2em;
-	border-bottom: 2px solid rgba(250,250,250, .3);
-	background: linear-gradient(45deg,#388eb9,#182a5f 80%);
-	color: white;
+	border-bottom: 2px solid rgba(5, 29, 245, 0.3);
+	background: white;
+	color: $white;
 	.request_sub_title {
 		margin-bottom: 0;
 	}
@@ -250,41 +260,44 @@ html {
 	height: 5%;
 	display: block;
 	margin: 1.5em auto 0 auto;
-	border-bottom: 1px solid rgba(250,250,250, .3);
+	border-bottom: 1px solid rgba(46, 66, 245, 0.3);
 	text-align: right;
+	label {
+		color: white;
+	}
 }
 .time-completed {
 	color: $white;
 }
 #samples_wrapper {
-	color: white;
+	color: $white;
 	padding-left: 1.0em;
 	background-color: linear-gradient(45deg,#388eb9,#182a5f 80%);
 	.row {
 		width: 100%;
-	
-		border-top: 2px solid rgba(250,250,250, .3);
-		border-left: 1px solid rgba(250,250,250, .3);
-		border-bottom: 2px solid rgba(250,250,250, .3);
+		background-color: $dark;
+		border-top: 3px solid rgba(0, 0, 0, 0.336);
+		border-left: 3px solid rgba(0, 0, 0, 0.336);
+		border-bottom: 3px solid rgba(0, 0, 0, 0.336);
 		//background-color: $back;
 		.complete {
 			width: 10%;
 			float: left;
 			text-align: center;
-			border-right: 1px solid rgba(250,250,250, .3);
+			border-right: 3px solid rgba(0, 0, 0, 0.336);
 			padding: 1em 0;
 			
 		}
 		.sample {
 			width: 80%;
 			float: left;
-			border-left: 1px solid rgba(250,250,250, .3);
+			border-left: 3px solid rgba(0, 0, 0, 0.336);
 			font-weight: bold;
 			font-size: 2.0em;
 			p {
 				margin: 0;
 				padding: 1em;
-				color: white;
+				color: $white;
 				font-weight: bold;
 				font-size: 1.0em;
 			}
@@ -292,14 +305,14 @@ html {
 		.completed {
 			width: 80%;
 			float: left;
-			border-left: 1px solid rgba(250,250,250, .3);
-			color: white;
+			border-left: 3px solid rgba(0, 0, 0, 0.336);
+			color: $white;
 			font-style: inherit;
 			font-weight: bold;
 			p {
 				margin: 0;
 				padding: 1em;
-				color: white;
+				color: $white;
 				font-weight: bold;
 				text-align: right;
 				font-size: 1.6em;
@@ -309,7 +322,7 @@ html {
 		.empty {
 			width: 80%;
 			float: left;
-			border-left: 1px solid rgba(250,250,250, .3);
+			border-left: 3px solid rgba(0, 0, 0, 0.336);
 			p {
 				margin: 0;
 				padding: 1em;
@@ -328,7 +341,7 @@ html {
 			text-align: center;
 			.trash {
 				//text-align: center;
-				border-left: 1px solid rgba(250,250,250, .3);
+				border-left: 3px solid rgba(0, 0, 0, 0.336);
 				padding: 1.5em 0;
 
 				img {
@@ -337,7 +350,7 @@ html {
 			}
 			.set-empty {
 				//text-align: center;
-				border-left: 1px solid rgba(250,250,250, .3);
+				border-left:3px solid rgba(0, 0, 0, 0.336);
 				padding: 1em 0;
 
 				img {
@@ -346,7 +359,7 @@ html {
 			}
 		}
 		i {
-			color: white;
+			color: $white;
 			transition: all .4s ease-in-out;
 			&:hover {
 				color: $white;
@@ -354,28 +367,29 @@ html {
 			}
 		}
 		a {
-			color: white;
+			color: $white;
 			//transition: all .4s ease-in-out;
 			//margin-top: 10px;
 			&:hover {
-				background-color: white;
+				background-color: $dark;
 				
 				//border: 1px solid rgba(250,250,250, .3);
 				
 			}
 		}
 		.closed-header {
-			color: white;
+			color: $white;
 		}
 		.sample-table {
-			color: white;
+			color: $white;
 			background-color: rgb(207, 238, 241);
 			padding: .75rem;
 			/* vertical-align: top; */
 			border-top: 1px solid #dee2e6;
 
 			.sample-row{
-				color: white;
+				color: $white;
+				
 			}
 			
 		}
@@ -427,7 +441,7 @@ html {
 	padding: 0 5%;
 }
 label {
-	color: $white;
+	color: $dark;
 }
 input[type="text"], textarea {
 	width: 100%;
@@ -439,12 +453,13 @@ input[type="text"], textarea {
 	height: 40px;
 	border-radius: 4px;
 	padding: 1em 2em;
+	color: white;
 }
 textarea {
 	height: 200px;
 }
 input[type="submit"] {
-	background: white;
+	background: gray;
 	outline: none;
 	border: none;
 	height: 40px;
@@ -453,10 +468,10 @@ input[type="submit"] {
 	display: inline-block;
 	transition: all .4s ease-in-out;
 	cursor: pointer;
-	color: $dark;
+	color: white;
 	&:hover {
 		background: $dark;
-		color: white;
+		color: gray;
 	}
 }
 ::-webkit-input-placeholder { color: $dark; }
@@ -474,6 +489,9 @@ div.image {
 	text-align: center;
 	font-size: 2.5em;
 	font-weight: bold;
-	color: $dark;
+	color: white;
+}
+.calendar-title {
+	color: white;
 }
 

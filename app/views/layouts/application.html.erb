@@ -5,6 +5,10 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+ <link rel="stylesheet" href="css/uikit.min.css" />
+ <script src="js/uikit.min.js"></script>
+<script src="js/uikit-icons.min.js"></script>
+<script src="uikit/dist/js/uikit-icons.min.js"></script>
 <meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
 <meta name="author" content="www.frebsite.nl" />
 <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
@@ -31,10 +35,10 @@
      
 <body class="main-bd">
 
-<div id="page">
-  <div id="header"> 
+<div  id="page">
+  <div  id="header"> 
     <a href="#menu"></a>
-      <div>
+      <div class="uk-background-secondary" >
         <%=image_tag("wine_f3.png") %>
         <%=image_tag("small_logo.png") %>
      </div>
@@ -46,7 +50,7 @@
 
  
     </div>
-  <nav id="menu">
+  <nav  id="menu">
   <img class="back" src="https://d30y9cdsu7xlg0.cloudfront.net/png/57198-200.png">
     <ul>
       <li><a href="/schedule"><%=image_tag('Schedule-128.png')%>Sampling Schedule</a></li>

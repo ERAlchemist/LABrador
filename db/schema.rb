@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404051530) do
+ActiveRecord::Schema.define(version: 20180405021350) do
 
   create_table "recurrences", force: :cascade do |t|
     t.string "title"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20180404051530) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "time_completed"
+    t.boolean "is_recurring"
+    t.integer "recurrence_interval"
   end
 
   create_table "samples", force: :cascade do |t|
