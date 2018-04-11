@@ -24,15 +24,16 @@
    <div class="field">
     <%= f.label :due_date %>:
     <%= f.date_select :due_date %>
-  </div>
+  </div><br>
 
-    <div class="field">
+    <div class="field" id="recurring">
     <%= f.label :is_recurring %>:
     <%= f.select :is_recurring, [true,false]%>
+  
   </div><br>
-    <div class="field">
-    <%= f.label :recurrence_interval %>:
-    <%= f.select :recurrence_interval, [1,2,3,4,5,6,7] %>
+    <div class="field" id="interval" style="display:none">
+    <%= f.label :recurrence_interval %>
+    <%= f.select :recurrence_interval, [1,2,3,4,5,6,7] %><label> day(s)</label>
   </div><br>
   <div class="actions" id="new-request">
     <%= f.submit %>

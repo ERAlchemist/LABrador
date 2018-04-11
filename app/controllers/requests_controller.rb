@@ -2,8 +2,11 @@ class RequestsController < ApplicationController
     before_action :set_request, only: [:show, :edit, :update, :destroy, :close_out, :reopen]
     def index
         @requests = Request.all
+        @requests.reverse
         @complete_requests = Request.where(complete: true)
+        @complete_requests.sort{|x,y| y.time_completed - x.time_completed}
         @incomplete_requests = Request.where(time_completed: nil)
+        @incomplete_requests.reverse
 
     end
 

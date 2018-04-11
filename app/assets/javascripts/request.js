@@ -15,5 +15,14 @@ $(function(){ // If you are not familiar with jQuery, this will run when the pag
             timeout: 5000
         });
     });
-  })();
+    $('#request_is_recurring').change(function(){
+        if ($(this).val() == "true") {
+            $('#interval').show();
+        } else {
+            $('#interval').hide();
+        }
+    });
+   
+    
+  })()
 

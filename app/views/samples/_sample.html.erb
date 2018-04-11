@@ -15,12 +15,12 @@
 		<div class="right-block">
 			<div class="set-empty">
 				<%= link_to remove_empty_request_sample_path(@request, sample.id), method: :patch do %>
-					<i class="fa fa-minus-circle" aria-hidden="true"></i>
+					<span uk-tooltip="title: Undo Empty" ><%=image_tag("minus-sign-32.png")%></span>
 				<% end %>
 			</div>
 			<div class="trash"  uk-tooltip="title: Delete Sample">
 				<%= link_to request_sample_path(@request, sample.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-					<%=image_tag("trash.svg")%>
+					<span uk-tooltip="title: Delete Sample"><%=image_tag("trash-64.png")%></span>
 				<% end %>
 			</div>
 		</div>
@@ -28,7 +28,7 @@
 	<% if sample.completed? %>
 		<div class="complete">
 			<%= link_to remove_complete_request_sample_path(@request, sample.id), method: :patch do %>
-				<span  uk-tooltip="title: Undo"><%=image_tag("Undo.svg")%></span>
+				<span  uk-tooltip="title: Undo Complete"><%=image_tag("Doc_Ex-64.png")%></span>
 	        	<% end %><br><br>
 			<%=sample.sample_size%>
 		</div>
@@ -50,7 +50,7 @@
 			</div>
 			<div class="trash">
 				<%= link_to request_sample_path(@request, sample.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-					<img src="https://png.icons8.com/color/30/000000/trash.png" uk-tooltip="title: Delete Sample">
+					<span uk-tooltip="title: Delete Sample"><%=image_tag("trash-64.png")%></span>
 						<% end %>
 			</div>
 		</div>
@@ -75,7 +75,7 @@
 			</div>
 			<div class="trash">
 				<%= link_to request_sample_path(@request, sample.id), method: :delete, data: { confirm: "Are you sure?" } do %>
-					<img src="https://png.icons8.com/color/30/000000/trash.png" uk-tooltip="title: Delete Sample">
+					<span uk-tooltip="title: Delete Sample"><%=image_tag("trash-64.png")%></span>
 					<% end %>
 			</div>
 		</div>

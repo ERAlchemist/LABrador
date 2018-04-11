@@ -6,23 +6,27 @@
  <%if @request.is_recurring%>
  Recurring: <%=@request.is_recurring %><br>
  Interval: <%=@request.recurrence_interval%> days
-<%end%>
+<%end%><br>
 
  	<% if !@request.time_completed %>
+	
 	 <span uk-icon="file-edit" uk-tooltip="title: Edit Request Details" ><%= link_to edit_request_path(@request) do  %>
+	 <br>
+	 <%=image_tag("edit.png")%>
 	 </span>
+	
 	<%end%>
-	<a uk-icon="file-edit" href="www.google.com">
+	
 
-<div class="closed-link">
+<div class="closed-link" >
 <%= link_to close_out_request_path(@request), method: :patch do %>
-	<%=image_tag("complete-64.png") %><br>Close Out
+	<span uk-tooltip="title: Close-Out Request"><%=image_tag("complete-64.png") %><br>Close Out</span>
 	<% end %>
 </div>
 <%else%>
-<div class="closed-link" uk-tooltip="title: Re-Open Request">
+<div class="closed-link"uk-tooltip="title: Re-Open Request" >
 	<%= link_to reopen_request_path(@request), method: :patch do %>
-		<%=image_tag("doc_edit_64.png") %><br>Re-Open
+		<%=image_tag("Write_64.png") %><br>Re-Open
 	<% end %></p>
 </div>
 <%end%></p>
