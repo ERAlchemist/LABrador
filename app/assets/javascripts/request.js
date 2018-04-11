@@ -24,5 +24,5 @@ $(function(){ // If you are not familiar with jQuery, this will run when the pag
     });
    
     
-  })()
+  })
 

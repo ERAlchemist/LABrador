@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.5'
+gem 'rails', '~> 5.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -39,6 +39,8 @@ gem 'jquery-rails'
 gem 'recurring_select',  git: 'https://github.com/sahild/recurring_select.git', branch: 'master'
 gem 'ice_cube'
 gem 'amoeba'
+gem 'bootsnap', require: false
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

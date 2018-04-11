@@ -19,16 +19,18 @@
   <div class="field">
     <%= f.label :description %>
     <%= f.text_area :description %>
-  </div>
+  </div><br>
 
    <div class="field">
-    <%= f.label :due_date %>:
+   <label uk-tooltip="Date this request is expected to be completed">Due Date</label>
     <%= f.date_select :due_date %>
   </div><br>
 
-    <div class="field" id="recurring">
-    <%= f.label :is_recurring %>:
-    <%= f.select :is_recurring, [true,false]%>
+    <div class="field" id="recurring" >
+      <label uk-tooltip="title: If set to true a new request will be generated with the same title, description, and samples with a due date one interval length after current due date after current request closes"> 
+        Is Recurring?
+      </label>
+    <%= f.select :is_recurring, [true,false], :selected => false %>
   
   </div><br>
     <div class="field" id="interval" style="display:none">
