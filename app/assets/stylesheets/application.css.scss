@@ -376,8 +376,14 @@ html {
 				
 			}
 		}
-		.closed-header {
-			color: $white;
+		.closed-request-header {
+			color: white;
+			.closed-details{
+				color: white;
+			}
+			h6{
+				color: white;
+			}
 		}
 		.sample-table {
 			color: $white;

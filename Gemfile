@@ -5,7 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
 # Use sqlite3 as the database for Active Record
@@ -33,13 +32,14 @@ gem 'roo'
 gem "iconv", "~> 1.0.3"
 gem 'csv'
 gem "simple_calendar", "~> 2.0"
-gem "react_on_rails"
 gem "webpacker", "3.0.2"
 gem 'jquery-rails'
-gem 'recurring_select',  git: 'https://github.com/sahild/recurring_select.git', branch: 'master'
 gem 'ice_cube'
 gem 'amoeba'
 gem 'bootsnap', require: false
+gem 'yaml_db'
+gem 'mysql2'
+gem 'figaro'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
