@@ -1,0 +1,14 @@
+
+    <div class="links">
+        <div uk-lightbox>
+            <a href="<%= path_to_image "tankFarm.png"%>" style="font-size: 2em;">Tank Farm|</a>
+            <a href="<%= path_to_image "redCellar.png"%>" style="font-size: 2em;">Red Cellar|</a>
+            <a href="<%= path_to_image "whiteCellar.png"%>" style="font-size: 2em;">White Cellar</a>
+        </div>
+    </div>
+
+<div class="links">
+    <%= link_to 'Requests', requests_path %> |
+	<a href="/schedule?start_date=<%=Time.zone.now.strftime("%Y-%m-%d")%>">Schedule</a>
+    
+</div>

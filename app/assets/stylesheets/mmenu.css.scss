@@ -160,17 +160,21 @@ html.mmenu-right.mmenu-opening #mmenu-blocker
 	
 }
 .mmenu li > a,
-.mmenu li > span,
+.mmenu li > span,{
+	background-color: #333;
+}
+	
 .mmenu li > a:hover
 {
-	color: #999;
+	color: #666;
 	text-decoration: none;
+	background-color: #CCC;
 	
 }
 .mmenu li.mmenu-selected > a,
 .mmenu li.mmenu-selected > span
 {
-	background: #222;
+	background: #111;
 }
 .mmenu li.mmenu-selected > a.mmenu-subopen
 {

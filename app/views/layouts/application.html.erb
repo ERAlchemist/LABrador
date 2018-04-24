@@ -9,7 +9,8 @@
 <meta name="author" content="www.frebsite.nl" />
 <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
 <meta name="robots" content="noindex, nofollow" />
-<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+ <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -23,10 +24,10 @@
 </head>
 <body class="main-bd">
 <div   id="page">
-  <div   id="header"> 
-    <a href="#menu"></a>
-      <div  >
-        <%=image_tag("wine_f3.png") %>
+  <div   id="header" > 
+    <a  href="#menu"><%=image_tag("menu2.png")%></a>
+      <div class="uk-position-top-right"  >
+        <span class="uk-visible@s"><%=image_tag("wine_f3.png") %></span>
         <%=image_tag("small_logo.png") %>
      </div>
   </div>
@@ -35,15 +36,20 @@
     </div>
   <nav  id="menu">
   <img class="back" src="https://d30y9cdsu7xlg0.cloudfront.net/png/57198-200.png">
-    <ul>
-      <li><a href="/schedule"><%=image_tag('Schedule-128.png')%>Sampling Schedule</a></li>
+    <ul >
+      <li ><a class="nav-links" href="/schedule"><%=image_tag('Schedule-128.png')%>Sampling Schedule</a></li>
       <li><%= link_to requests_path do %>
-            <%=image_tag('request_128.png')%>Requests
+            <%=image_tag('request_128w.png')%>Requests
           <%end%>
       </li>
       <li>
           <%= link_to new_request_path do %>
-            <%= image_tag('doc_add_128.png')%>New Request
+            <%= image_tag('doc_add_128w.png')%>New Request
+          <%end%>
+      </li>
+      <li>
+          <%= link_to maps_path do %>
+            <%= image_tag('maps_128.png')%>Site Maps
           <%end%>
       </li>
     </ul>

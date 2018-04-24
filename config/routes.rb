@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root 'requests#index'
+  root 'welcome#index'
   resources :schedule 
+  resources :maps, only: :index
   resources :requests do
     member do
       patch :close_out, :reopen

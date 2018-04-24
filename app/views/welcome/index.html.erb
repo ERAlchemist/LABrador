@@ -1,0 +1,8 @@
+<h1 style="color: white;"><%=image_tag('wine_48w.png') %>Welcome to LABrador</h1>
+
+<div class="links">
+    <%= link_to 'Requests', requests_path %> |
+	<a href="/schedule?start_date=<%=Time.zone.now.strftime("%Y-%m-%d")%>">Schedule</a>|
+	<%= link_to 'Maps', maps_path %>
+</div>
+

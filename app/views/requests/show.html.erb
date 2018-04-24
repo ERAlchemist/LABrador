@@ -31,21 +31,13 @@
 </div>
 <%end%></p>
 
-
-
 <div id="samples_wrapper">
-
 	<%if @request.time_completed%>
-	
 		<%= render "samples/close"%>
-	
 	<%else%>
 	<p class="uk-text-primary"><%= @request.samples.count %> samples</p>
 		<% samples = @request.samples.sort_by{|h| h.tank.to_i} %>
-		
 		<%= render samples  %>
-		
-	
 	<%end%>
 		
 	<div id="form">
@@ -56,6 +48,7 @@
 <div class="links">
 	<%= link_to 'Edit', edit_request_path(@request) %> |
 	<%= link_to 'Delete', request_path(@request), method: :delete, data: { confirm: "Are you sure?" }%> |
-    <%= link_to 'Back', requests_path %> |
-	<a href="/schedule?start_date=<%=Time.zone.now.strftime("%Y-%m-%d")%>">Schedule</a>
+    <%= link_to 'Requests', requests_path %> |
+	<a href="/schedule?start_date=<%=Time.zone.now.strftime("%Y-%m-%d")%>">Schedule</a> |
+	<%= link_to 'Maps', maps_path %>
 </div>
