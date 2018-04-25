@@ -5381,3 +5381,186 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 1826ms (Views: 1820.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/requests/new" for 127.0.0.1 at 2018-04-23 21:45:38 -0700
+Processing by RequestsController#new as HTML
+  Rendering requests/new.html.erb within layouts/application
+  Rendered requests/_form.html.erb (32.3ms)
+  Rendered requests/new.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 217ms (Views: 192.1ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/requests/new" for 127.0.0.1 at 2018-04-23 21:45:44 -0700
+Processing by RequestsController#new as HTML
+  Rendering requests/new.html.erb within layouts/application
+  Rendered requests/_form.html.erb (4.8ms)
+  Rendered requests/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 68ms (Views: 66.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests" for 127.0.0.1 at 2018-04-23 21:45:48 -0700
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.5ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  [1m[36mRequest Load (0.5ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."complete" = $1[0m  [["complete", true]]
+  [1m[36mRequest Load (0.5ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."time_completed" IS NULL[0m
+  Rendering requests/index.html.erb within layouts/application
+  Rendered requests/_incomplete.html.erb (1.4ms)
+  Rendered requests/_complete.html.erb (4.3ms)
+  Rendered requests/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 79ms (Views: 70.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/requests/3" for 127.0.0.1 at 2018-04-23 21:46:25 -0700
+Processing by RequestsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRequest Load (0.3ms)[0m  [1m[34mSELECT  "requests".* FROM "requests" WHERE "requests"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Request Load (0.0ms)[0m  [1m[34mSELECT  "requests".* FROM "requests" WHERE "requests"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering requests/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "samples" WHERE "samples"."request_id" = $1[0m  [["request_id", 3]]
+  [1m[36mSample Load (0.3ms)[0m  [1m[34mSELECT "samples".* FROM "samples" WHERE "samples"."request_id" = $1[0m  [["request_id", 3]]
+  Rendered collection of samples/_sample.html.erb [4 times] (8.1ms)
+  Rendered samples/_form.html.erb (1.1ms)
+  Rendered requests/show.html.erb within layouts/application (37.6ms)
+Completed 200 OK in 113ms (Views: 86.6ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/requests/3" for 127.0.0.1 at 2018-04-23 21:47:51 -0700
+Processing by RequestsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRequest Load (0.4ms)[0m  [1m[34mSELECT  "requests".* FROM "requests" WHERE "requests"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Request Load (0.0ms)[0m  [1m[34mSELECT  "requests".* FROM "requests" WHERE "requests"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering requests/show.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "samples" WHERE "samples"."request_id" = $1[0m  [["request_id", 3]]
+  [1m[36mSample Load (0.3ms)[0m  [1m[34mSELECT "samples".* FROM "samples" WHERE "samples"."request_id" = $1[0m  [["request_id", 3]]
+  Rendered collection of samples/_sample.html.erb [4 times] (11.3ms)
+  Rendered samples/_form.html.erb (1.2ms)
+  Rendered requests/show.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 102ms (Views: 97.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-24 20:55:45 -0700
+  [1m[35m (9.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (592.8ms)
+Completed 200 OK in 808ms (Views: 797.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-24 21:01:30 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (67.5ms)
+Completed 200 OK in 147ms (Views: 141.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schedule?start_date=2018-04-24" for 127.0.0.1 at 2018-04-24 21:01:34 -0700
+Processing by ScheduleController#index as HTML
+  Parameters: {"start_date"=>"2018-04-24"}
+  Rendering schedule/index.html.erb within layouts/application
+  [1m[36mRequest Load (34.0ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  Rendered simple_calendar/_week_calendar.html.erb (38.1ms)
+  Rendered schedule/index.html.erb within layouts/application (128.1ms)
+Completed 200 OK in 216ms (Views: 116.0ms | ActiveRecord: 57.2ms)
+
+
+Started GET "/schedule?start_date=2018-04-24" for 127.0.0.1 at 2018-04-24 21:03:30 -0700
+Processing by ScheduleController#index as HTML
+  Parameters: {"start_date"=>"2018-04-24"}
+  Rendering schedule/index.html.erb within layouts/application
+  [1m[36mRequest Load (0.9ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  Rendered simple_calendar/_week_calendar.html.erb (5.6ms)
+  Rendered schedule/index.html.erb within layouts/application (33.7ms)
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 11.4ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "}": expected "}", was ""):
+    3: <head>
+    4: <title>LABrador</title>
+    5:     <%= csrf_meta_tags %>
+    6:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    7:     <%= javascript_include_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8: <meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+    9: <meta name="author" content="www.frebsite.nl" />
+  
+app/assets/stylesheets/application.css.scss:465
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___838374786777097276_70167198135880'
+Started GET "/" for 127.0.0.1 at 2018-04-24 21:06:09 -0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (346.8ms)
+Completed 500 Internal Server Error in 355ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "}": expected "}", was ""):
+    1: <h1 style="color: white;"><%=image_tag('wine_48w.png') %>Welcome to LABrador</h1>
+    2: 
+    3: <div class="links">
+    4:     <%= link_to 'Requests', requests_path %> |
+  
+app/assets/stylesheets/application.css.scss:436
+app/views/welcome/index.html.erb:1:in `_app_views_welcome_index_html_erb__3510610018821514080_47010386745640'
+Started GET "/" for 127.0.0.1 at 2018-04-24 21:08:24 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (252.5ms)
+Completed 500 Internal Server Error in 262ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "}": expected "}", was ""):
+    1: <h1 style="color: white;"><%=image_tag('wine_48w.png') %>Welcome to LABrador</h1>
+    2: 
+    3: <div class="links">
+    4:     <%= link_to 'Requests', requests_path %> |
+  
+app/assets/stylesheets/application.css.scss:436
+app/views/welcome/index.html.erb:1:in `_app_views_welcome_index_html_erb__3510610018821514080_47010388857980'
+Started GET "/" for 127.0.0.1 at 2018-04-24 21:09:37 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2181.6ms)
+Completed 200 OK in 2399ms (Views: 2397.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schedule" for 127.0.0.1 at 2018-04-24 21:09:47 -0700
+Processing by ScheduleController#index as HTML
+  Rendering schedule/index.html.erb within layouts/application
+  [1m[36mRequest Load (0.6ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  Rendered simple_calendar/_week_calendar.html.erb (4.8ms)
+  Rendered schedule/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 56ms (Views: 49.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/schedule" for 127.0.0.1 at 2018-04-24 21:11:19 -0700
+Processing by ScheduleController#index as HTML
+  Rendering schedule/index.html.erb within layouts/application
+  [1m[36mRequest Load (0.7ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  Rendered simple_calendar/_week_calendar.html.erb (5.9ms)
+  Rendered schedule/index.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 1371ms (Views: 1361.6ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/requests" for 127.0.0.1 at 2018-04-24 21:13:07 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.8ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  [1m[36mRequest Load (0.6ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."complete" = $1[0m  [["complete", true]]
+  [1m[36mRequest Load (0.4ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."time_completed" IS NULL[0m
+  Rendering requests/index.html.erb within layouts/application
+  Rendered requests/_incomplete.html.erb (1.7ms)
+  Rendered requests/_complete.html.erb (1413.4ms)
+  Rendered requests/index.html.erb within layouts/application (1426.4ms)
+Completed 200 OK in 1700ms (Views: 1644.2ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/requests/new" for 127.0.0.1 at 2018-04-24 21:13:49 -0700
+Processing by RequestsController#new as HTML
+  Rendering requests/new.html.erb within layouts/application
+  Rendered requests/_form.html.erb (88.4ms)
+  Rendered requests/new.html.erb within layouts/application (99.9ms)
+Completed 200 OK in 183ms (Views: 167.9ms | ActiveRecord: 0.0ms)
+
+

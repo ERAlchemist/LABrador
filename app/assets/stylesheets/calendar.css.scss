@@ -1,0 +1,39 @@
+.calendar-head {
+	display: block;
+	margin-bottom: 10px;
+	text-align: center;
+	font-size: 2.5em;
+	font-weight: bold;
+	color: white;
+}
+.calendar-title {
+	color: white;
+}
+
+.sched-table {
+	border: 1px;
+	:hover{
+		background-color: white;
+	}
+	.sched-view {
+		font-size: 24px;
+		height: 15em;
+		td{
+			border-left: 2px solid rgba(0,0,250, .3);
+			opacity: 0.8em;
+			width: 14%;
+			
+		}
+		a {
+			font-weight: bold;
+			color: #011B2E;
+			&:hover {
+				color: rgb(2, 129, 192);
+				
+				
+			}
+		}
+	}
+
+
+}	

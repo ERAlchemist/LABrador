@@ -33,24 +33,7 @@ $prim-grey: linear-gradient(90deg,$mainStart,$primary 80%);
 }
 html {
  	height: 100%;
- // opacity: 0.1;
-  //position: fixed;
-.back {
-	top: 0;
-	left: 10;
-	right: 10;
-	height: 160%;
-	width: 90%;
-	opacity: 0.1;
-	position: fixed;
-}
-.front {
-	top: 50;
-	left: 200;
-	height: 40%;
-	width: 40%;
-	opacity: 0.1;
-	position: fixed;	
+
 }
 .small-logo {
 	position: absolute;
@@ -67,65 +50,26 @@ html {
 	position: absolute;
 		top: 7em;
 		left: 2em;
-	.schedule {
-		//position: absolute;
-		//top: 7em;
-		//left: 2em;
+
 	}
-}
+
 
 .hidden{
 	display: visible;
   }
-.sched-table {
-	border: 1px;
-	:hover{
-		background-color: white;
-	}
-	.sched-view {
-		font-size: 24px;
-		height: 15em;
-		td{
-			border-left: 2px solid rgba(0,0,250, .3);
-			opacity: 0.8em;
-			width: 14%;
-			
-		}
-		a {
-			font-weight: bold;
-			color: #011B2E;
-			&:hover {
-				color: rgb(2, 129, 192);
-				
-				
-			}
-		}
-	}
+
+  
 
 
-}
-	
-
-}
 
 .main-bd {
   opacity: 1.0;
   background: $prim-grey;
   height: 100%;
-  /*
-  //background-color: url(https://i.pinimg.com/originals/9e/51/6e/9e516e6cd9e142138dd354c2082fd1b7.jpg);
-  background:linear-gradient(90deg,#00a0ee,#386aff 80%);
-  background: -webkit-linear-gradient(89deg, $mainStart 10%, $mainEnd 100%);
-  background:    -moz-linear-gradient(89deg, $mainStart 10%, $mainEnd 100%);
-  background:     -ms-linear-gradient(89deg, $mainStart 10%, $mainEnd 100%);
-  background:      -o-linear-gradient(89deg, $mainStart 10%, $mainEnd 100%);
-  background:         linear-gradient(89deg, $mainStart 10%, $mainEnd 100%);
-  */
   font-family: 'Lato', sans-serif;
 
   .logo {
 	  display: block;
-	  //position: relative;
 	  margin-left: auto;
 	  margin-right: auto;
 	  padding-top: 50px;
@@ -135,8 +79,6 @@ html {
 	  text-align: center;
 	  font-weight: bold;
   }
-
-
 
  
 }
@@ -257,7 +199,6 @@ html {
 #samples_wrapper {
 	color: $white;
 	padding-left: 2em;
-	//background-color: linear-gradient(45deg,#388eb9,#182a5f 80%);
 	.row {
 		width: 100%;
 		background-color: $dark;
@@ -330,11 +271,8 @@ html {
 			float: right;
 			text-align: center;
 			border-left:3px solid rgba(0, 0, 0, 0.336);
-			:hover{
-				//background-color: #DDD;
-			}
+			
 			.trash {
-				//text-align: center;
 				&:hover{
 					background-color: #FFF;
 				}
@@ -367,12 +305,10 @@ html {
 		}
 		a {
 			color: $white;
-			//transition: all .4s ease-in-out;
-			//margin-top: 10px;
 			&:hover {
 				background-color: $dark;
 				
-				//border: 1px solid rgba(250,250,250, .3);
+		
 				
 			}
 		}
@@ -486,17 +422,6 @@ div.image {
 			width: 10%;
 			max-width: 5px;
 			max-height:5px;
-			background-image: url(/app/assets/images/empty.xcf)
-}
-.calendar-head {
-	display: block;
-	margin-bottom: 10px;
-	text-align: center;
-	font-size: 2.5em;
-	font-weight: bold;
-	color: white;
-}
-.calendar-title {
-	color: white;
+			background-image: url(/app/assets/images/empty.xcf);
 }
 
