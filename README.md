@@ -1,6 +1,4 @@
-# README
-
-<h3>LABrador</h3>
+# LABrador
 
 My cornerstone project for the Web Developer track at Bloc.  
 
