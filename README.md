@@ -15,13 +15,13 @@ A Rails web application for tracking wine sample requests at the large-scale pro
 
 clone and run locally:
 
-`git clone https://github.com/ERAlchemist/LABrador.git`
+<pre><code>$ git clone https://github.com/ERAlchemist/LABrador.git</pre></code>
 
-`cd LABrador`
+<pre><code>$ cd LABrador</pre></code>
 
-`bundle install`
+<pre><code>$ bundle install</pre></code>
 
-`rails s`
+<pre><code>$ rails s</pre></code>
 
 <hr>
 
