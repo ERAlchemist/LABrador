@@ -13,4 +13,16 @@ A Rails web application for tracking wine sample requests at the large-scale pro
 <img src="./app/assets/images/import_success.png" />
 
 
+clone and run locally:
+
+`git clone https://github.com/ERAlchemist/LABrador.git`
+
+`cd LABrador`
+
+`bundle install`
+
+`rails s`
+
+<hr>
+
 Built as my cornerstone project for the [Bloc: Full-Stack Web Development Program](http://Bloc.io) 
