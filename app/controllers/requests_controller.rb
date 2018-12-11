@@ -7,7 +7,6 @@ class RequestsController < ApplicationController
         @complete_requests.sort{|x,y| y.time_completed - x.time_completed}
         @incomplete_requests = Request.where(time_completed: nil)
         @incomplete_requests.reverse
-
     end
 
     def show
@@ -61,8 +60,6 @@ class RequestsController < ApplicationController
         redirect_to @request, notice: "Request Re-opened!"
     end
         
-        
-  
     private
         def set_request
             @request = Request.find(params[:id])

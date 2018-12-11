@@ -44,6 +44,7 @@ gem 'jquery-rails'
 gem 'amoeba'
 gem 'yaml_db'
 gem 'pg'
+gem 'slack-ruby-client'
 
 
 group :development, :test do
